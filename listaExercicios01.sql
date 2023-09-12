@@ -43,3 +43,8 @@ RIGHT JOIN livros ON autores.id = livros.autor_id;
 SELECT alunos.nome AS aluno, IFNULL(matriculas.curso, 'Nenhum Curso Matriculado') AS curso
 FROM matriculas
 RIGHT JOIN alunos ON matriculas.aluno_id = alunos.id;
+
+SELECT A1.nome AS aluno1, A2.nome AS aluno2, M1.curso FROM matriculas M1
+INNER JOIN matriculas M2 ON M1.curso = M2.curso AND M1.aluno_id < M2.aluno_id
+INNER JOIN alunos A1 ON M1.aluno_id = A1.id
+INNER JOIN alunos A2 ON M2.aluno_id = A2.id;
