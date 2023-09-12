@@ -55,3 +55,6 @@ LIMIT 1;
 
 SELECT produto, receita FROM vendas
 WHERE receita = (SELECT MIN(receita) FROM vendas);
+
+/*Exercício 18*/
+
