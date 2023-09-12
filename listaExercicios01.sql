@@ -10,3 +10,7 @@ WHERE autores.nome = 'J.K. Rowling';
 SELECT alunos.nome FROM alunos
 INNER JOIN matriculas ON alunos.id = matriculas.aluno_id
 WHERE matriculas.curso = 'Engenharia de Software';
+
+SELECT produto, SUM(receita) as receita_total
+FROM vendas
+GROUP BY produto;
