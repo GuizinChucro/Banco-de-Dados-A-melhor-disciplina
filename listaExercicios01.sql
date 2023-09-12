@@ -52,3 +52,6 @@ INNER JOIN alunos A2 ON M2.aluno_id = A2.id;
 SELECT autores.nome AS autor, COUNT(livros.id) AS quantidade_de_livros FROM autores
 LEFT JOIN livros ON autores.id = livros.autor_id GROUP BY autores.nome ORDER BY quantidade_de_livros DESC
 LIMIT 1;
+
+SELECT produto, receita FROM vendas
+WHERE receita = (SELECT MIN(receita) FROM vendas);
