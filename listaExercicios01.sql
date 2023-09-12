@@ -39,3 +39,7 @@ LEFT JOIN matriculas ON alunos.id = matriculas.aluno_id;
 
 SELECT autores.nome AS autor, IFNULL(livros.titulo, 'Sem Livros Publicados') AS livro FROM autores
 RIGHT JOIN livros ON autores.id = livros.autor_id;
+
+SELECT alunos.nome AS aluno, IFNULL(matriculas.curso, 'Nenhum Curso Matriculado') AS curso
+FROM matriculas
+RIGHT JOIN alunos ON matriculas.aluno_id = alunos.id;
